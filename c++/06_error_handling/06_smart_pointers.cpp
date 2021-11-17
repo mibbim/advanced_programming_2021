@@ -18,7 +18,9 @@ class Vector {
     return elem[i];
   }
 
+  // undefined behaviour if desctructor throws an exception
   ~Vector() noexcept { std::cout << "~Vector\n"; }
+  // move semantics is no exception bc the resources are swapped, not acquired
 };
 
 class ManyResources {
